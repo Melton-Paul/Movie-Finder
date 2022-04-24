@@ -10,19 +10,46 @@
 </head>
 <body>
     <section class="hero">
-        <img class="hero-img" src="./images/andre-tan-THJJRUhNlEc-unsplash.jpg">
-        <div class="hero-heading">
-            <h1 class="hero-title">Find your film</h1>
-            <a class="hero-link" href="/watchlist.html">My Watchlist</a>
-        </div>
-        <div class="hero-img"></div>
-        <div class="input-group">
-            <i class="fa fa-search"></i>
-            <input type="text" id="searchBar">
-            <button class="btn" type="submit" id="searchBtn">Search</button>
+        <div class="container">
+            <img class="hero-img" src="./images/andre-tan-THJJRUhNlEc-unsplash.jpg">
+            <div class="hero-heading">
+                <h1 class="hero-title">Find your film</h1>
+                <a class="hero-link" href="/watchlist.html">My Watchlist</a>
+            </div>
+            <div class="hero-img"></div>
+            <div class="input-group">
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchBar">
+                <button class="btn" type="submit" id="searchBtn">Search</button>
+            </div>
         </div>
     </section>
-        <section class="content-body">
+    <section class="content-body">
+        <div id="noData">
+            <i class="fa fa-film fa-6x"></i>
+            <p>Start Exploring</p>
+        </div>
+        <div class="movie-container container">
+            <img src="" alt="">
+            <div class="movie-content">
+                <div class="movie-header">
+                    <h2 class="movie-title clear__bottom">Movie Title</h2>
+                    <i class="fa fa-star clear__bottom"></i>
+                    <p class="movie-rating clear__bottom">8.1</p>
+                </div>
+                <div class="movie-tags">
+                    <p class="movie-time clear__bottom">117 min</p>
+                    <p class="movie-category clear__bottom">Action, Drama, Sci-fi</p>
+                    <div class="watchlist-add">
+                        <i class="fa fa-plus"></i>
+                        <p class="clear__bottom">Add to Watchlist</p>
+                    </div>
+                </div>
+                <div class="movie-desc">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quidem cumque ut ullam porro in iste dolorum doloribus! Illo, sunt.</p>
+                </div>
+            </div>
+        </div>
 
     </section>
 

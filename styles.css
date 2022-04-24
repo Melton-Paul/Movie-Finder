@@ -25,7 +25,7 @@ body {
 .hero-heading {
   position: absolute;
   top: 50px;
-  left: 42px;
+  left: 35px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -62,7 +62,7 @@ body {
 }
 .input-group {
   border: 1px solid #d1d5db;
-  width: 462px;
+  width: 435px;
   height: 38px;
   display: flex;
   justify-content: space-between;
@@ -87,6 +87,7 @@ body {
   color: black;
   opacity: 0.6;
   margin-left: 1rem;
+  cursor: pointer;
 }
 .input-group .btn {
   height: 100%;
@@ -95,6 +96,91 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
-.input-group:hover .fa-search {
-  opacity: 0.7;
+
+/* Content Body */
+.content-body {
+  position: relative;
+  height: 100vh;
+  padding-top: 4rem;
+}
+#noData {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.2;
+  font-size: 18px;
+  font-weight: 700;
+}
+#noData .fa-film {
+  display: block;
+}
+#noData p {
+  margin: 0;
+}
+
+/* Movie Block */
+.movie-container {
+  display: flex;
+  justify-content: row;
+  border-bottom: 1px solid #6b7280;
+  margin: 1rem;
+  padding-bottom: 2rem;
+}
+
+.movie-header {
+  display: flex;
+  align-items: center;
+}
+.movie-header .fa-star {
+  margin: 0 0.3rem 0 0.6rem;
+  margin-top: 0.8rem;
+  color: gold;
+}
+.movie-content {
+  margin-left: 1rem;
+}
+.movie-tags {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.movie-desc {
+  color: #6b7280;
+}
+
+.watchlist-add {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.watchlist-add .fa-plus {
+  margin-top: 0.8rem;
+}
+.watchlist-add p {
+  margin-left: 0.5rem;
+}
+.watchlist-add:hover {
+  color: gold;
+}
+
+/* Utility Classes */
+
+.clear__bottom {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1040px) {
+  .container {
+    max-width: 1040px;
+  }
 }
