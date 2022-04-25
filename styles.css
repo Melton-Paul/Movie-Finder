@@ -130,6 +130,7 @@ body {
   border-bottom: 1px solid #6b7280;
   margin: 1rem;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .movie-header {
@@ -145,15 +146,21 @@ body {
   margin-left: 1rem;
 }
 .movie-tags {
-  width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.movie-tag {
+  margin-right: 0.2rem;
 }
 .movie-desc {
   color: #6b7280;
 }
 
+.movie-img {
+  width: 100px;
+  height: 170px;
+}
 .watchlist-add {
   display: flex;
   align-items: center;
@@ -167,6 +174,11 @@ body {
 }
 .watchlist-add:hover {
   color: gold;
+}
+@media screen and (min-width: 800px) {
+  .movie-tags {
+    width: 463px;
+  }
 }
 
 /* Utility Classes */
