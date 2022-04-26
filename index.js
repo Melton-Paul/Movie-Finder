@@ -6,7 +6,7 @@ let savedId = []
 let typingTimer
 
 
-document.getElementById("searchBtn").addEventListener("click", getData);
+document.getElementById("searchBtn").addEventListener("click", getData)
 search.addEventListener('keyup', () => {
     clearTimeout(typingTimer)
     if (search.value) {
@@ -23,24 +23,40 @@ search.addEventListener('keyup', () => {
 function getData(){
     let searchValue = search.value
     fetch(`http://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`)
-        .then(res => res.json())
-        .then(data => {
+    .then(res => res.json())
+    .then(data => {
+        if(data.Response === "False"){
+            movieContainer.innerHTML= `
+            <div id="noData">
+            <p>OOPS!</p>
+            <p>No movie was found, check your spelling!</p>
+            </div>
+            `
+        }
+        else{
             movieContainer.innerHTML= ""
             data.Search.forEach(movie => {
                 noData.style.display = "none"
-                fetch(`http://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
+                    fetch(`http://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
                     .then(res => res.json())
                     .then(data => {
                         movieContainer.innerHTML += renderPage(data)})
-                });
-        })
-}
+                    });
+                }
+            })
+            movieContainer.innerHTML = `
+            <div id="noData">
+                <p>OOPS!</p>
+                <p>No movie was found, check your spelling!</p>
+            </div>
+                `
+        }
         
 function renderPage(data) {
     const {Title, Runtime, Genre, Plot, imdbRating, imdbID, Poster} =  data
     return  `
         <div class="movie-container container">
-            <img class="movie-img" src="${Poster}" alt="A poster of the movie ***">
+            <img class="movie-img" src="${Poster}" alt="A poster of the movie ${Title}">
             <div class="movie-content">
                 <div class="movie-header">
                     <h2 class="movie-title clear__bottom">${Title}</h2>
