@@ -1,22 +1,40 @@
 const search = document.getElementById("searchBar")
 const movieContainer = document.getElementById("movieContainer")
+const noData = document.getElementById("noData")
 let movieAdd = document.getElementsByClassName("watchlist-add")
 let savedId = []
+let typingTimer
 
 
-document.getElementById("searchBtn").addEventListener("click", function(){
+document.getElementById("searchBtn").addEventListener("click", getData);
+search.addEventListener('keyup', () => {
+    clearTimeout(typingTimer)
+    if (search.value) {
+        typingTimer = setTimeout(getData, 2000) 
+        movieContainer.innerHTML = `
+        <div id="noData">
+            <img class="loading" src="./images/30+fps.gif">
+            <p>Fetching Movies</p>
+        </div>
+            `
+    }
+})
+
+function getData(){
     let searchValue = search.value
     fetch(`http://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`)
         .then(res => res.json())
         .then(data => {
+            movieContainer.innerHTML= ""
             data.Search.forEach(movie => {
                 noData.style.display = "none"
                 fetch(`http://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
                     .then(res => res.json())
-                    .then(data => movieContainer.innerHTML += renderPage(data))
+                    .then(data => {
+                        movieContainer.innerHTML += renderPage(data)})
                 });
         })
-});
+}
         
 function renderPage(data) {
     const {Title, Runtime, Genre, Plot, imdbRating, imdbID, Poster} =  data

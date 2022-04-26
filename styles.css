@@ -122,6 +122,9 @@ body {
 #noData p {
   margin: 0;
 }
+.loading {
+  width: 200px;
+}
 
 /* Movie Block */
 .movie-container {
