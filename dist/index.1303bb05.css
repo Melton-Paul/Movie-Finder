@@ -108,7 +108,7 @@ body {
 
 .content-body {
   height: 100vh;
-  padding-top: 4rem;
+  margin-top: 4rem;
   position: relative;
 }
 

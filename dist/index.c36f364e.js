@@ -38,12 +38,6 @@ function getData() {
             });
         }
     });
-    movieContainer.innerHTML = `
-            <div id="noData">
-                <p>OOPS!</p>
-                <p>No movie was found, check your spelling!</p>
-            </div>
-                `;
 }
 function renderPage(data) {
     const { Title , Runtime , Genre , Plot , imdbRating , imdbID , Poster  } = data;

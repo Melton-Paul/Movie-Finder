@@ -26,6 +26,7 @@ function getData(){
     .then(res => res.json())
     .then(data => {
         if(data.Response === "False"){
+            
             movieContainer.innerHTML= `
             <div id="noData">
             <p>OOPS!</p>
@@ -44,12 +45,6 @@ function getData(){
                     });
                 }
             })
-            movieContainer.innerHTML = `
-            <div id="noData">
-                <p>OOPS!</p>
-                <p>No movie was found, check your spelling!</p>
-            </div>
-                `
         }
         
 function renderPage(data) {
