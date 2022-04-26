@@ -11,7 +11,7 @@ body {
   line-height: 1.5;
   position: relative;
   font-size: 14px;
-  background: #d1d5db;
+  background: #e9eaec;
 }
 
 /* Hero */
@@ -26,9 +26,9 @@ body {
 .hero-heading {
   position: absolute;
   top: 50px;
-  left: 35px;
+  left: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 90%;
@@ -36,6 +36,7 @@ body {
 .hero-title {
   font-weight: 800;
   font-size: 38px;
+  margin-bottom: 0.7rem;
 }
 .hero-img {
   z-index: -1;
@@ -61,6 +62,27 @@ body {
 .hero-link:hover {
   opacity: 0.8;
 }
+@media screen and (min-width: 741px) {
+  .hero-heading {
+    flex-direction: row;
+    left: 10px;
+    top: 30px;
+  }
+  .hero-title {
+    margin: 2rem;
+    font-size: 4rem;
+  }
+  .hero-link {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .hero-heading {
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+  }
+}
 
 /* Input Group */
 #searchBar {
@@ -68,7 +90,7 @@ body {
 }
 .input-group {
   border: 1px solid #d1d5db;
-  width: 435px;
+  width: 300px;
   height: 38px;
   display: flex;
   justify-content: space-between;
@@ -103,6 +125,11 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
+@media screen and (min-width: 440px) {
+  .input-group {
+    width: 435px;
+  }
+}
 
 /* Content Body */
 .content-body {
@@ -122,6 +149,7 @@ body {
   opacity: 0.2;
   font-size: 18px;
   font-weight: 700;
+  text-align: center;
 }
 #noData .fa-film {
   display: block;
