@@ -11,7 +11,7 @@ search.addEventListener('keyup', ()=>{
         typingTimer = setTimeout(getData, 2000);
         movieContainer.innerHTML = `
         <div id="noData">
-            <img class="loading" src="./images/30+fps.gif">
+            <img class="loading" src="/30+fps.gif">
             <p>Fetching Movies</p>
         </div>
             `;
