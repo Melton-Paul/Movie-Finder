@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  background: #d1d5db;
   margin: 0;
   padding: 0;
   font-family: Inter, sans-serif;
@@ -50,11 +51,14 @@ body {
 
 .hero-link {
   color: #fff;
-  margin-top: .9rem;
-  margin-right: 1.2rem;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.hero-link__margin {
+  margin-top: .9rem;
+  margin-right: 1.2rem;
 }
 
 .hero-link:hover {

@@ -11,7 +11,7 @@ search.addEventListener('keyup', ()=>{
         typingTimer = setTimeout(getData, 2000);
         movieContainer.innerHTML = `
         <div id="noData">
-            <img class="loading" src="/30+fps.gif">
+            <img class="loading" src="./images/30+fps.gif">
             <p>Fetching Movies</p>
         </div>
             `;
@@ -53,7 +53,7 @@ function renderPage(data) {
                 <div class="movie-tags">
                     <p class="movie-tag movie-time clear__bottom">${Runtime}</p>
                     <p class="movie-tag movie-category clear__bottom">${Genre}</p>
-                    <div class=" movie-tag watchlist-add" onclick="addWatch('${imdbID}')">
+                    <div class=" movie-tag watchlist-add" id="${imdbID}" onclick="addWatch('${imdbID}')">
                         <i class="fa fa-plus"></i>
                         <p class="clear__bottom">Add to Watchlist</p>
                     </div>
@@ -68,6 +68,8 @@ function renderPage(data) {
 function addWatch(id) {
     if (savedId.includes(id)) window.alert("You already have this movie in your watch list!");
     else {
+        document.getElementById(id).innerHTML = "";
+        // document.getElementById(`"${id}"`).textContent = `Added to watchlist`
         savedId.push(id);
         window.localStorage.setItem("savedIds", JSON.stringify(savedId));
     }
