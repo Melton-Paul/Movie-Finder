@@ -4,7 +4,7 @@ function renderList() {
     if (stored.length > 0) {
         noData.style.display = "none";
         stored.forEach((movieId)=>{
-            fetch(`http://www.omdbapi.com/?apikey=9980ac75&i=${movieId}&`).then((res)=>res.json()
+            fetch(`https://www.omdbapi.com/?apikey=9980ac75&i=${movieId}&`).then((res)=>res.json()
             ).then((data)=>{
                 const { Title , Runtime , Genre , Plot , imdbRating , imdbID , Poster  } = data;
                 movieContainer.innerHTML += `

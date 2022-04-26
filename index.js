@@ -22,7 +22,7 @@ search.addEventListener('keyup', () => {
 
 function getData(){
     let searchValue = search.value
-    fetch(`http://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`)
+    fetch(`https://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`)
     .then(res => res.json())
     .then(data => {
         if(data.Response === "False"){
@@ -37,7 +37,7 @@ function getData(){
             movieContainer.innerHTML= ""
             data.Search.forEach(movie => {
                 noData.style.display = "none"
-                    fetch(`http://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
+                    fetch(`https://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
                     .then(res => res.json())
                     .then(data => {
                         movieContainer.innerHTML += renderPage(data)})

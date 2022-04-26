@@ -19,7 +19,7 @@ search.addEventListener('keyup', ()=>{
 });
 function getData() {
     let searchValue = search.value;
-    fetch(`http://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`).then((res)=>res.json()
+    fetch(`https://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`).then((res)=>res.json()
     ).then((data1)=>{
         if (data1.Response === "False") movieContainer.innerHTML = `
             <div id="noData">
@@ -31,7 +31,7 @@ function getData() {
             movieContainer.innerHTML = "";
             data1.Search.forEach((movie)=>{
                 noData.style.display = "none";
-                fetch(`http://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`).then((res)=>res.json()
+                fetch(`https://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`).then((res)=>res.json()
                 ).then((data)=>{
                     movieContainer.innerHTML += renderPage(data);
                 });
