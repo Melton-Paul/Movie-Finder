@@ -25,16 +25,6 @@ function getData(){
     fetch(`https://www.omdbapi.com/?apikey=9980ac75&s=${searchValue}`)
     .then(res => res.json())
     .then(data => {
-        if(data.Response === "False"){
-            
-            movieContainer.innerHTML= `
-            <div id="noData">
-            <p>OOPS!</p>
-            <p>No movie was found, check your spelling!</p>
-            </div>
-            `
-        }
-        else{
             movieContainer.innerHTML= ""
             data.Search.forEach(movie => {
                 noData.style.display = "none"
@@ -42,10 +32,18 @@ function getData(){
                     .then(res => res.json())
                     .then(data => {
                         movieContainer.innerHTML += renderPage(data)})
-                    });
-                }
-            })
-        }
+            });
+    })
+    .catch(() => {
+        noData.style.display = "block"
+        movieContainer.innerHTML= `
+        <div id="noData">
+        <p>OOPS!</p>
+        <p>No movie was found, check your spelling!</p>
+        </div>
+        `
+    })
+}
         
 function renderPage(data) {
     const {Title, Runtime, Genre, Plot, imdbRating, imdbID, Poster} =  data
