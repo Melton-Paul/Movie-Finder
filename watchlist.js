@@ -24,7 +24,7 @@ function renderList(){
                             <div class="movie-tags">
                                 <p class="movie-tag movie-time clear__bottom">${Runtime}</p>
                                 <p class="movie-tag movie-category clear__bottom">${Genre}</p>
-                                <div class=" movie-tag watchlist-add" onclick="removeMovie('${imdbID}')">
+                                <div class=" movie-tag watchlist-add" id="${imdbID}">
                                     <i class="fa fa-x"></i>
                                     <p class="clear__bottom">Remove</p>
                                 </div>
@@ -35,17 +35,34 @@ function renderList(){
                         </div>
                         </div>
                         `
+                        removeMovie()
+    
+    
         })
-    });}
+
+        
+    })
+
     }
+}
     
 
 
 
-function removeMovie(id){
-   const location = stored.indexOf(id)
-   stored.splice(location, 1)
-   window.localStorage.setItem("savedIds", JSON.stringify(stored))
-   document.location.reload()
+function removeMovie(){
+    const watchlistMovies = Array.from(document.getElementsByClassName("watchlist-add"))
+    watchlistMovies.forEach(movie => {
+        movie.addEventListener("click", event => {
+            const movieId = event.target.parentElement.id
+            const location = stored.indexOf(movieId)
+            stored.splice(location, 1)
+            window.localStorage.setItem("savedIds", JSON.stringify(stored))
+            document.location.reload()
+
+
+        })
+    })
 }
+
+
 renderList()
