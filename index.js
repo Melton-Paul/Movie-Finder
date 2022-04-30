@@ -26,8 +26,8 @@ function getData(){
     .then(res => res.json())
     .then(data => {
             movieContainer.innerHTML= ""
+            noData.style.display = "none"
             data.Search.forEach(movie => {
-                noData.style.display = "none"
                 fetch(`https://www.omdbapi.com/?apikey=9980ac75&t=${movie.Title}`)
                 .then(res => res.json())
                 .then(data => {
@@ -93,18 +93,6 @@ function createList(){
 }
 
 
-
-// function addWatch(id){
-//     if(savedId.includes(id)){
-//             window.alert("You already have this movie in your watch list!")
-//         }
-//     else {
-//         document.getElementById(id).innerHTML = ""
-//             // document.getElementById(`"${id}"`).textContent = `Added to watchlist`
-//             savedId.push(id)
-//             window.localStorage.setItem("savedIds", JSON.stringify(savedId))
-//         }
-//     }
     
 function pageLoad(){
     if(window.localStorage.length > 0){
