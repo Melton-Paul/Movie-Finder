@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Movie Finder",
+    "version": "1.0.0",
+    "description": "A movie searcher and personal watch list creator",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+
+}

@@ -9,6 +9,9 @@ body {
   padding: 0;
   margin: 0;
   line-height: 1.5;
+  width: 700px;
+  max-height: 900px;
+  overflow: auto;
   position: relative;
   font-size: 14px;
   background: #e9eaec;
