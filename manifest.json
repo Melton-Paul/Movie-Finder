@@ -5,7 +5,7 @@
     "description": "A movie searcher and personal watch list creator",
     "action": {
         "default_popup": "index.html",
-        "default_icon": "icon.png"
+        "default_icon": "./images/camera.png"
     }
 
 }
