@@ -200,6 +200,7 @@ body {
 }
 .movie-content {
   margin-left: 1rem;
+  width: 100%;
 }
 .movie-tags {
   display: flex;
